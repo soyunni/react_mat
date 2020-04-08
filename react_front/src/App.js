@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Route } from 'react-router-dom';
 import { MuiThemeProvider } from "@material-ui/core/styles";
 import classnames from "classnames";
@@ -7,8 +8,9 @@ import LoginPage from './pages/LoginPage';
 import WritePage from './pages/WritePage';
 import PostPage from './pages/PostPage';
 import RegisterPage from './pages/RegisterPage';
-import MainApp from './components/Layout/AppLayout/MainApp';
 import DEMO from './constants/appConfig';
+import loadable from 'react-loadable';
+import LoadingComponent from './components/Loading';
 
 // = styles =
 // 3rd
@@ -19,6 +21,11 @@ import "./styles/theme.scss";
 import "./styles/ui.scss";
 
 import lightTheme from "./components/themes/lightTheme";
+
+let MainApp = loadable({
+  loader: () => import('./components/Layout/AppLayout/MainApp'),
+  loading: LoadingComponent
+})
 
 const App = () => {
   return (
@@ -37,16 +44,22 @@ const App = () => {
               "sidebar-lg": DEMO.sidebarWidth === "large"
             })
             }>
-          <Route component={MainApp} path="/app" />
-          <Route component={PostListPage} path={['/@:username', '/']} exact />
-          <Route component={LoginPage} path="/login" />
-          <Route component={RegisterPage} path="/register" />
-          <Route component={WritePage} path="/write" />
-          <Route component={PostPage} path="/@:username/:postId" />
+          <Route component={MainApp} path="/" />
         </div>
       </div>
     </MuiThemeProvider>
   )
 }
 
-export default App;
+const mapStateToProps = (state, ownProps) => ({
+  layoutBoxed: state.settings.layoutBoxed,
+  navCollapsed: state.settings.navCollapsed,
+  navBehind: state.settings.navBehind,
+  fixedHeader: state.settings.fixedHeader,
+  sidebarWidth: state.settings.sidebarWidth,
+  theme: state.settings.theme,
+});
+
+export default connect(
+  mapStateToProps
+)(App);

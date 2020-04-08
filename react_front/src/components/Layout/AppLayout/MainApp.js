@@ -4,7 +4,6 @@ import loadable from 'react-loadable';
 import Header from '../Header/index';
 import Sidenav from '../Sidenav/index';
 import Footer from '../Footer/index';
-//import Customizer from 'components/Customizer';
 import MainApp2 from '../../../pages/MainApp';
 import LoadingComponent from '../../Loading/index';
 

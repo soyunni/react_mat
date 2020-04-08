@@ -33,7 +33,7 @@ class Sidebar extends React.Component {
   }
 
   render() {
-    const { navCollapsed, colorOption } = this.props;
+    const { navCollapsed } = this.props;
     let toggleIcon = null;
     if (navCollapsed) {
       toggleIcon = <i className="material-icons">radio_button_unchecked</i>;
@@ -47,10 +47,7 @@ class Sidebar extends React.Component {
           'bg-color-light': false,
           'bg-color-dark': true })}
             >
-        <section
-          className={classnames('sidebar-header', {
-            'bg-color-warning': true })}
-                >
+        <section className={classnames('sidebar-header', { 'bg-color-warning': true })}>
           <svg className="logo-img logo-react" viewBox="0 0 3925 3525" version="1.1" xmlns="http://www.w3.org/2000/svg">
             <circle className="react-dot" stroke="none" cx="1960" cy="1760" r="355" />
             <g className="react-curve" strokeWidth="170" fill="none">
@@ -85,8 +82,7 @@ class Sidebar extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  navCollapsed: state.settings.navCollapsed,
-  colorOption: state.settings.colorOption
+  navCollapsed: state.settings.navCollapsed
 });
 
 const mapDispatchToProps = dispatch => ({
