@@ -3,8 +3,6 @@ import { withRouter } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import $ from 'jquery';
 import 'jquery-slimscroll/jquery.slimscroll.min';
-import DEMO from '../../../constants/demoData';
-
 
 class SidebarContent extends React.Component {
 
@@ -181,7 +179,7 @@ class SidebarContent extends React.Component {
         <li className="nav-divider" />
         <li><Button href="#/app/extra"><i className="nav-icon material-icons">person_outline</i><span className="nav-text">Account</span></Button>
           <ul>
-            <li><Button className="prepend-icon" href="#/user/login"><span>Login</span></Button></li>
+            <li><Button className="prepend-icon" href="/login"><span>Login</span></Button></li>
             <li><Button className="prepend-icon" href="#/user/sign-up"><span>Sign Up</span></Button></li>
             <li><Button className="prepend-icon" href="#/user/forgot-password"><span>Forgot Password</span></Button></li>
             <li><Button className="prepend-icon" href="#/user/confirm-email"><span>Confirm Email</span></Button></li>
@@ -209,16 +207,16 @@ class SidebarContent extends React.Component {
         <li>
           <Button href="#/app/menu"><i className="nav-icon material-icons">sort</i><span className="nav-text">Menu Levels</span></Button>
           <ul>
-            <li><Button className="prepend-icon" href={DEMO.link}><span>Level 1</span></Button></li>
+            <li><Button className="prepend-icon" href="javascript:;"><span>Level 1</span></Button></li>
             <li>
-              <Button className="prepend-icon" href={DEMO.link}><span>Level 1</span></Button>
+              <Button className="prepend-icon" href="javascript:;"><span>Level 1</span></Button>
               <ul>
-                <li><Button href={DEMO.link}><span>Level 2</span></Button></li>
+                <li><Button href="javascript:;"><span>Level 2</span></Button></li>
                 <li>
-                  <Button href={DEMO.link}><span>Level 2</span></Button>
+                  <Button href="javascript:;"><span>Level 2</span></Button>
                   <ul>
-                    <li><Button href={DEMO.link}><span>Level 3</span></Button></li>
-                    <li><Button href={DEMO.link}><span>Level 3</span></Button></li>
+                    <li><Button href="javascript:;"><span>Level 3</span></Button></li>
+                    <li><Button href="javascript:;"><span>Level 3</span></Button></li>
                   </ul>
                 </li>
               </ul>

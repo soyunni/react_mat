@@ -56,7 +56,7 @@ class Sidebar extends React.Component {
               <ellipse cx="-815" cy="-2505" rx="715" ry="1875" transform="rotate(-210)" />
             </g>
           </svg>
-          <Link to="/" className="brand">{APPCONFIG.brand}</Link>
+          <Link to="/" className="brand">TD Admin</Link>
           <a href={DEMO.link} className="collapsednav-toggler" onClick={this.onToggleCollapsedNav}>
             {toggleIcon}
           </a>
@@ -68,12 +68,7 @@ class Sidebar extends React.Component {
 
         <section className="sidebar-footer">
           <ul className="nav">
-            <li>
-              <a target="_blank" href={DEMO.productLink}>
-                <i className="nav-icon material-icons">help</i>
-                <span className="nav-text"><span>Help</span> & <span>Support</span></span>
-              </a>
-            </li>
+            <li></li>
           </ul>
         </section>
       </nav>

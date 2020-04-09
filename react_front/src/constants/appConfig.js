@@ -5,7 +5,7 @@ const APPCONFIG = {
   brand: 'Material',
   user: 'Lisa',
   year,
-  AutoCloseMobileNav: true,          // true, false. Automatically close sidenav on route change (Mobile only)
+  AutoCloseMobileNav: false,          // true, false. Automatically close sidenav on route change (Mobile only)
   showCustomizer: true,              // Boolean: true, false. Customizer will be opened (visible) first time app was loaded if set to true
   color: {
     primary: '#00BCD4',
